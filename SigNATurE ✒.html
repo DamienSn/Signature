@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SigNATurE ✒</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <style>body {overflow: hidden}</style>
+  </head>
+  <body>
+
+    <div class="header">
+      <h1 id="title"></h1>
+      <h5 id="myh5"></h5>
+    </div>
+
+<div class="datas">
+    <input type="text" name="Nom" value="" placeholder="Votre nom..." id="Nom" onkeyup="submit();"><br><br>
+
+  <input type="text" name="Prénom" value="" placeholder="Votre prénom..." id="Prénom" onkeyup="submit();"><br><br>
+
+  <input type="tel" name="Fixe" value="" placeholder="☎ Téléphone fixe..." id="Fixe" onkeyup="submit();"><br><br>
+
+  <input type="tel" name="Mobile" value="" placeholder="📱 Téléphone mobile..." id="Mobile" onkeyup="submit();"><br><br>
+
+   <input type="email" name="Mail" value="" placeholder="✉ Adresse e-mail..." id="Mail" onkeyup="submit();"><br><br>
+
+   <input type="text" name="Adresse" value="" placeholder="📬 Votre adresse..." id="Adresse" onkeyup="submit();"><br><br>
+
+   <input type="url" name="Profil" value="" placeholder="👦 Votre photo... (lien)" id="Photo" onkeyup="submit();"><br><br>
+   <p>💡 Vous pouvez utiliser une url en "file://" <br>Si vous ne savez pas les utiliser, cliquez <a href="SigNATurE ✒ - Aide.html" target="_blank">ici</a></p><br>
+
+  <input type="submit" name="" value="Réinitialiser..." onclick="reset();">
+</div>
+
+<div class="preview">
+  <label for="police">Choisissez une police :</label><br><br>
+
+  <select name="police" id="police" onchange="police();">
+      <option value="candara">Candara</option>
+      <option value="arial">Arial</option>
+      <option value="impact">Impact</option>
+      <option value="verdana">Verdana</option>
+      <option value="trebuchetms">Trebuchet MS</option>
+      <option value="timesnewroman">Times New Roman</option>
+      <option value="courier">Courier New</option>
+  </select>
+  <br><br>
+
+  <img src="" class="picture" align="left"><p class="surname"></p><p class="name"></p><br><br>
+  <hr>
+  <p class="mail"></p>
+  <p class="telfix"></p><p class="telmobile"></p>
+  <p class="address"></p><br><br>
+  <a href="#" class="dl"><input type="submit" name="générer" value="Générer" class="générer" onclick="générerSignature();"></a>
+
+</div>
+
+<div class="footer">
+  <p>Par Damien Stéphan</p>
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+
+  </body>
+</html>

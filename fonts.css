@@ -1,0 +1,55 @@
+#verdana {
+  font-family: Verdana;
+}
+
+#trebuchetms {
+  font-family: "Trebuchet MS";
+}
+
+#timesnewroman {
+  font-family: "Times New Roman";
+}
+
+#impact {
+  font-family: "Impact"
+}
+
+#arial {
+  font-family: "Arial"
+}
+
+#courier {
+  font-family: "Courier New";
+}
+
+#candara{
+  font-family: "Candara";
+}
+
+option[value="arial"] {
+  font-family: "Arial";
+}
+
+option[value="impact"] {
+  font-family: "Impact";
+}
+
+option[value="verdana"] {
+  font-family: "Verdana";
+}
+
+option[value="trebuchetms"] {
+  font-family: "Trebuchet MS";
+}
+
+option[value="timesnewroman"] {
+  font-family: "Times New Roman";
+}
+
+option[value="courier"] {
+  font-family: "Courier New";
+}
+
+option[value="candara"] {
+  font-family: "Candara";
+}
