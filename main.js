@@ -157,7 +157,7 @@ function générerSignature() {
 ██   ██ ██   ████ ██ ██      ██ ██   ██    ██    ██  ██████  ██   ████ ███████
 */
 
-let myTitleText = 'SigNATurE ✒';
+let myTitleText = 'Signature ✒';
 let myTitleArray = myTitleText.split('');
 let timeLooper;
 
