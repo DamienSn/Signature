@@ -25,14 +25,6 @@ function submit() {
     document.querySelector('.address').textContent = '';
   }
 
-  let photo = document.querySelector('#Photo').value;
-  document.querySelector('.picture').setAttribute('src', photo);
-
-  let photoComplétée = document.querySelector('#Photo').getAttribute('set');
-  if (photoComplétée === '') {
-    document.querySelector('.picture').style.visibility = "hidden";
-  }
-
   mettreEnFormeLesDonnéesTel(fixe);
   mettreEnFormeLesDonnéesTelMob(mob);
 
@@ -42,6 +34,23 @@ function submit() {
     document.querySelector('.preview').style.visibility = "visible";
   }
 }
+
+const file = document.querySelector('#file');
+const img = document.querySelector('.picture')
+
+file.addEventListener('change', function(e){
+  const photo = this.files[0];
+
+  if (photo) {
+    const analyseur = new FileReader();
+    analyseur.readAsDataURL(photo);
+    analyseur.addEventListener('load', function(e){
+      img.setAttribute('src', this.result)
+      img.style.visibility = 'visible';
+      document.querySelector('.preview').style.visibility = "visible";
+    })
+  }
+})
 /*
 ███████ ██ ██   ██ ███████
 ██      ██  ██ ██  ██
@@ -128,11 +137,11 @@ function police() {
   document.querySelector('.preview').setAttribute('id', choix);
 };
 /*
- ██████  ███████ ███    ██ ███████ ██████  ███████ ██████
+██████  ███████ ███    ██ ███████ ██████  ███████ ██████
 ██       ██      ████   ██ ██      ██   ██ ██      ██   ██
 ██   ███ █████   ██ ██  ██ █████   ██████  █████   ██████
 ██    ██ ██      ██  ██ ██ ██      ██   ██ ██      ██   ██
- ██████  ███████ ██   ████ ███████ ██   ██ ███████ ██   ██
+██████  ███████ ██   ████ ███████ ██   ██ ███████ ██   ██
 */
 
 function générerSignature() {
@@ -140,8 +149,9 @@ function générerSignature() {
   let index = div.indexOf('<img');
   let indexA = div.indexOf('<a');
   let font = document.querySelector('select').value;
-  let signature = div.slice(index, indexA) + '<style>*{font-family: "' + font + '"} .picture {padding-right: 15px; max-width: 300px; max-height: 100px;}hr {border-color: #eb2f06;}'
+  let signature = '<!DOCTYPE html> <head><meta charset="utf-8"></head><body>' + div.slice(index, indexA) + '<style>*{font-family: "' + font + '"} .picture {padding-right: 15px; max-width: 300px; max-height: 100px;}hr {border-color: #eb2f06;}' + '</body></html>'
   console.info("La signature a bien été générée !");
+  console.log(signature);
 
   var element = document.querySelector('.dl');
 
@@ -150,7 +160,7 @@ function générerSignature() {
   element.setAttribute('download', 'Signature.html');
 };
 /*
- █████  ███    ██ ██ ███    ███  █████  ████████ ██  ██████  ███    ██ ███████
+█████  ███    ██ ██ ███    ███  █████  ████████ ██  ██████  ███    ██ ███████
 ██   ██ ████   ██ ██ ████  ████ ██   ██    ██    ██ ██    ██ ████   ██ ██
 ███████ ██ ██  ██ ██ ██ ████ ██ ███████    ██    ██ ██    ██ ██ ██  ██ ███████
 ██   ██ ██  ██ ██ ██ ██  ██  ██ ██   ██    ██    ██ ██    ██ ██  ██ ██      ██
