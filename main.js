@@ -37,6 +37,11 @@ function submit() {
 
 const file = document.querySelector('#file');
 const img = document.querySelector('.picture')
+const btn = document.querySelector('#uploadBtn');
+
+btn.onclick = function(e){
+  file.click()
+}
 
 file.addEventListener('change', function(e){
   const photo = this.files[0];
