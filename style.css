@@ -11,13 +11,13 @@ body {
   width: 700px;
 }
 
-.header {
+header {
   text-align: left;
   background: #f8c291;
   padding: 35px;
 }
 
-.footer {
+footer {
   position: absolute;
   bottom: 0;
   right: 30px;
@@ -26,6 +26,7 @@ body {
 input {
   font-family: "caviar";
   color: white;
+  outline: none;
 }
 
 input[type = "text"], input[type = "tel"], input[type = "email"], input[type = "url"], button {
@@ -38,19 +39,17 @@ input[type = "text"], input[type = "tel"], input[type = "email"], input[type = "
   width: 150px;
   height: 30px;
   outline: none;
+  transition: 0.25s;
 }
 
-input[type = "text"]:focus, input[type = "tel"]:focus, input[type = "email"]:focus, input[type = "url"]:focus {
-  border-color: #eb2f06;
-  background: #6a89cc;
-  width: 250px;
+.datas input:hover, .datas input:active , .datas input:focus{
+  background: #1e3799;
 }
 
-input[type = "submit"] {
+input[type = "submit"], input[type = "reset"] {
   background: #2ecc71;
   border: 2px solid #2ecc71;
   border-radius: 20px;
-  transition: color 1s, width 0.15s;
   padding-left: 30px;
   padding-right: 30px;
   width: 150px;
@@ -60,7 +59,7 @@ input[type = "submit"] {
   transition: 0.25s;
 }
 
-input[type = "submit"]:hover {
+input[type = "submit"]:hover, input[type = "reset"]:hover {
   background-color: #0c2461;
   border-color: #0c2461;
 }
@@ -90,7 +89,6 @@ select {
   background: none;
   border: 2px solid #1e3799;
   border-radius: 20px;
-  transition: color 1s, width 0.15s;
   padding-left: 30px;
   padding-right: 30px;
   width: 200px;
@@ -99,28 +97,42 @@ select {
   background: #82ccdd;
   font-family: "caviar";
   color: white;
+  transition: 0.25s;
+  cursor: pointer;
 }
 
-select:hover {
-  border-color: #eb2f06;
-  width: 300px;
+select:hover, select:active, select:focus {
+  background: #1e3799;
 }
 
-.datas {
-  position: absolute;
-  top: 60%;
-  left: 30%;
-  transform: translate(-50%, -50%);
+option {
+  outline: none;
 }
 
 .preview {
-  visibility: hidden;
-  position: absolute;
-  top: 60%;
-  left: 55%;
-  transform: translate(-50%, -50%);
   text-align: left;
   font-family: "Candara";
+}
+
+.preview, .datas {
+  margin: 100px;
+}
+
+.datas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.datas > * {
+  margin: 10px;
+}
+
+.identity {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .picture {
@@ -146,26 +158,10 @@ a {
   padding-left: 50px;
 }
 
-.domaine {
-  background-color: #78e08f;
-}
-
-.port {
-background-color: #e55039;
-}
-
-.chemin {
-  background-color: #fad390;
-}
-
-.parametres {
-  background-color: #0c2461;
-  color: white;
-}
-
-.ancre {
-  background-color: #079992;
-  color: white;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @font-face {
