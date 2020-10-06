@@ -5,62 +5,63 @@
   <title>Signature ✒</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" charset="utf-8"></script>
 </head>
 <body>
-
-  <div class="header">
+  <header>
     <h1 id="title"></h1>
     <h5 id="myh5"></h5>
-  </div>
+  </header>
+  <main>
 
-  <div class="datas">
-    <input type="text" name="Nom" value="" placeholder="Votre nom..." id="Nom" onkeyup="submit();"><br><br>
+    <div class="datas">
+      <input type="text" placeholder="Votre prénom..." v-model="surname">
+            <input type="text" placeholder="Votre nom..." v-model="name">
+      <input type="tel" placeholder="☎ Téléphone fixe..." v-model="fixe">
+      <input type="tel" placeholder="📱 Téléphone mobile..." v-model="mobile">
+      <input type="email" placeholder="📧 Adresse e-mail..." v-model="mail">
+      <input type="text" placeholder="📬 Votre adresse..." v-model="adresse">
+      <input type="file" id="file" placeholder="Photo" onchange="app.upload()">
+      <button type="button" id="uploadBtn" @click="click">Uploader ma photo</button>
 
-    <input type="text" name="Prénom" value="" placeholder="Votre prénom..." id="Prénom" onkeyup="submit();"><br><br>
+      <input type="reset" value="Réinitialiser..." v-on:click="reset">
+    </div>
 
-    <input type="tel" name="Fixe" value="" placeholder="☎ Téléphone fixe..." id="Fixe" onkeyup="submit();"><br><br>
+    <div class="preview">
+      <label for="police">Choisissez une police :</label><br><br>
 
-    <input type="tel" name="Mobile" value="" placeholder="📱 Téléphone mobile..." id="Mobile" onkeyup="submit();"><br><br>
+      <select name="police" id="police" onchange="police();">
+        <option value="candara">Candara</option>
+        <option value="arial">Arial</option>
+        <option value="impact">Impact</option>
+        <option value="verdana">Verdana</option>
+        <option value="trebuchetms">Trebuchet MS</option>
+        <option value="timesnewroman">Times New Roman</option>
+        <option value="courier">Courier New</option>
+      </select>
+      <br><br>
 
-    <input type="email" name="Mail" value="" placeholder="✉ Adresse e-mail..." id="Mail" onkeyup="submit();"><br><br>
+      <div class="identity">
+        <img v-bind:src="src" class="picture">
+        <div class="infos">
+          <p class="surname">{{surname}}</p>
+          <p class="name">{{name}}</p>
+        </div>
+      </div>
+      <hr>
+      <p class="mail">📧 {{mail}}</p>
+      <p class="telfix">☎ {{fixe}}</p><p class="telmobile">📱 {{mobile}}</p>
+      <p class="address">📬 {{adresse}}</p><br><br>
+      <a href="#" class="dl"><input type="submit" name="générer" value="Générer" class="générer" onclick="générerSignature();"></a>
 
-    <input type="text" name="Adresse" value="" placeholder="📬 Votre adresse..." id="Adresse" onkeyup="submit();"><br><br>
+    </div>
+  </main>
 
-    <input type="file" id="file" placeholder="Photo">
-
-    <button type="button" name="button" id="uploadBtn">Uploader ma photo</button><br><br>
-
-    <input type="submit" name="" value="Réinitialiser..." onclick="reset();">
-  </div>
-
-  <div class="preview">
-    <label for="police">Choisissez une police :</label><br><br>
-
-    <select name="police" id="police" onchange="police();">
-      <option value="candara">Candara</option>
-      <option value="arial">Arial</option>
-      <option value="impact">Impact</option>
-      <option value="verdana">Verdana</option>
-      <option value="trebuchetms">Trebuchet MS</option>
-      <option value="timesnewroman">Times New Roman</option>
-      <option value="courier">Courier New</option>
-    </select>
-    <br><br>
-
-    <img src="" class="picture" align="left"><p class="surname"></p><p class="name"></p><br><br>
-    <hr>
-    <p class="mail"></p>
-    <p class="telfix"></p><p class="telmobile"></p>
-    <p class="address"></p><br><br>
-    <a href="#" class="dl"><input type="submit" name="générer" value="Générer" class="générer" onclick="générerSignature();"></a>
-
-  </div>
-
-  <div class="footer">
+  <footer>
     <p>Par Damien Stéphan</p>
-  </div>
+  </footer>
 
   <script type="text/javascript" src="main.js"></script>
-
 </body>
 </html>
