@@ -16,12 +16,12 @@
   <main>
 
     <div class="datas">
-      <input type="text" placeholder="Votre prénom..." v-model="surname">
-            <input type="text" placeholder="Votre nom..." v-model="name">
-      <input type="tel" placeholder="☎ Téléphone fixe..." v-model="fixe">
-      <input type="tel" placeholder="📱 Téléphone mobile..." v-model="mobile">
-      <input type="email" placeholder="📧 Adresse e-mail..." v-model="mail">
-      <input type="text" placeholder="📬 Votre adresse..." v-model="adresse">
+      <input type="text" placeholder="Votre prénom..." v-model="surname" autocomplete="name">
+      <input type="text" placeholder="Votre nom..." v-model="name" autocomplete="family-name">
+      <input type="tel" placeholder="☎ Téléphone fixe..." v-model="fixe" autocomplete="tel">
+      <input type="tel" placeholder="📱 Téléphone mobile..." v-model="mobile" autocomplete="tel">
+      <input type="email" placeholder="📧 Adresse e-mail..." v-model="mail" autocomplete="email">
+      <input type="text" placeholder="📬 Votre adresse..." v-model="adresse" autocomplete="street-address">
       <input type="file" id="file" placeholder="Photo" onchange="app.upload()">
       <button type="button" id="uploadBtn" @click="click">Uploader ma photo</button>
 
