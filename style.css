@@ -4,7 +4,6 @@ body {
   margin: 0;
   text-align: center;
   background-color: #82ccdd;
-  overflow: hidden;
 }
 
 .générer {
@@ -15,12 +14,6 @@ header {
   text-align: left;
   background: #f8c291;
   padding: 35px;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 30px;
 }
 
 input {
@@ -162,6 +155,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 @font-face {
